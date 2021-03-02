@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"></meta>
+    <title>Rivet的網站</title>
+    <script type="text/javascript">
+    //內建函式，例如alert
+    //alert(Hello)
+    //自訂義函式，使用function
+    function test(message /* 參數名稱 */ ){
+        alert(message);
+    }
+
+    function test2(n1,n2){
+        sum=n1+n2;
+        return sum;
+    }
+
+    input=prompt("輸入字串","");
+    test(input);
+    var answer = test2(20,50);
+    alert(answer);
+
+
+    function total(control){
+        var sum2=0;
+        for(i=1;i<=control;i++){
+            sum2=sum2+i;
+        }
+        return(sum2);
+    }
+
+    alert(total(100))
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

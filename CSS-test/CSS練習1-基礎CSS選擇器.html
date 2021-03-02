@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8"></meta>
+        <title>Rivet的網站</title>
+        <style type="text/css">
+        /* CSS選擇器 */
+        .title{font-weight:bold;font-size:20px} /* 設定粗體字，字型大小設20px */
+
+        /* 設定box寬度為400px，內距為10px，box外框樣式為寬度1px 虛線 綠色 */
+        /* box與上個/下個box的距離設成10px */
+        .content{width:400px;padding:10px;border:1px dashed green;margin-top:10px;margin-bottom:10px}
+
+        .keyword{color:red} /* 設定字型顏色為紅色 */
+
+        /* 設定box寬度為100px，高度為20px，底色為藍色，位置為絕對位置，距離為向左500px，向上50px */
+        .box1{width:100px;height:20px;background-color:blue;position:absolute;left:500px;top:50px}
+
+        /* 設定box寬度為100px，高度為50px，底色為藍色，位置為相對位置，距離為向左300px，向上50px */
+        .box2{width:100px;height:50px;background-color:blue;position:relative;left:300px;top:50px}
+        </style>
+</head>
+
+<body>
+        <div class="title">我的生存日記</div>
+        <div class="box2"></div>
+        <div class="content">
+        今天打樹並且做出<span class="keyword">工作檯</span>，<br/>
+        之後做了一些基本工具<span style="position:relative;top:-5px">2</span>。
+        </div>
+        <div class="box1"></div>
+</body>
+</html>

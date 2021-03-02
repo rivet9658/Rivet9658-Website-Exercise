@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"></meta>
+    <title>Rivet的網站</title>
+    <script type="text/javascript">
+
+    /* 可把函式名稱移到前面 */
+    var add=function(n1,n2){
+        return n1+n2;
+    }
+
+    alert(add(20,50));
+
+    /* 函式式個資料，可放到變數內 */
+    var test=add;
+    alert(test(30,60));
+
+    /* 函式創造新的名稱空間 */
+
+    var x=3;
+    function test2(){
+        var x=4; /* 在找x為何時會先從函式裡開始找，沒有才會到外面找 */
+        var y=9;
+        alert(x+y); /* 函式內外是不同的空間，所以可以同時存在兩個x */
+    }
+
+    test2();
+    alert(x); /* 找全局的(外面的)，不會找到函式內部的y */
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

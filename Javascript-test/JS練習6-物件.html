@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"></meta>
+    <title>Rivet的網站</title>
+    <script type="text/javascript">
+        /* 建立空白物件 */
+        var point = new Object(); /* O要大寫 */
+        /* 建立物件的成員(屬性與方法) */
+        point.x=3; /* 物件中的成員x是3，此為屬性 */
+        point.y=4; /* 物件中的成員y是4，此為屬性 */
+        point.getPosition=function(){ /* 將函式裝入物件中的成員getPosition之中，此為方法*/
+            alert(this.x+","+this.y); /*this就是物件本身(point)*/
+        }
+        /* 使用物件 */
+        alert(point.x); /* 使用物件point裡面的屬性x */
+        point.getPosition(); /* 使用物件point裡面的方法getPosition */
+
+        /* 綜合上述，寫個RPG玩家物件 */
+        var RPGplayer = new Object();
+        RPGplayer.name = "Rivet";
+        RPGplayer.hp = 100;
+        RPGplayer.mp = 100;
+        RPGplayer.rest = function(){
+            this.hp+=3;
+            this.mp+=1;
+        }
+
+        RPGplayer.fight = function(){
+            this.hp-=5;
+            this.mp-=2;
+        }
+
+        RPGplayer.status = function(){
+            alert("Player's Name is: "+this.name+"，Player's HP is: "+this.hp+"，Player's MP is: "+this.mp);
+        }
+
+        RPGplayer.fight();
+        RPGplayer.rest();
+        RPGplayer.status();
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

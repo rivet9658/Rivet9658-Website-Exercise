@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"></meta>
+    <title>Rivet的網站</title>
+    <script type="text/javascript">
+    //用Javascript程式動態註冊事件處理器
+    function init(){
+        var btn=document.getElementById("btn");
+        var handler=function(e){ //e = eventObj，取得事件物件
+            alert(e.clientX+","+e.clientY); //取得滑鼠事件的座標位置(點下去的那一點座標)
+        }
+        btn.addEventListener("click",handler);
+
+        /*
+            1. 使用者按按鈕，觸發click事件
+            2. 導覽器主動收集和事件有關的資訊，並製造出Event Object事件物件
+               var eventObj=事件物件
+            3. 呼叫已註冊的事件處理器handler(事件處理函式)
+               並通過參數傳入函式內handler(eventObj)
+
+        */
+
+        document.addEventListener("keydown" ,function(a){ //匿名函式，用來直接當作事件處理器
+            alert(a.keyCode); //取得使用者所按下按鍵的code
+        })
+    }
+    </script>
+
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body onload = "init();">
+    <button id="btn">8787</button>
+</body>
+</html>

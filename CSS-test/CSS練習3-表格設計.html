@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"></meta>
+    <title>Rivet的網站</title>
+    <style type="text/css">
+
+        /* 設置標籤名稱選擇器body，字型改成微軟正黑體，字型大小為16px */
+        body{
+            font-size: 16px;
+            font-family: "微軟正黑體"
+        }
+
+        /* 設置標籤名稱選擇器table，表格框線樣式調成2px寬 單直線 黑色*/
+        /* box寬度為400，框線改為只有一條 */
+        table{
+            border: 2px solid black;
+            width: "400";
+            border-collapse:collapse
+        }
+
+        /* 設置標籤名稱選擇器td，框線只有底部有，樣式為2px寬 單直線 黑色 */
+        /* box內距設為10px */
+        td{
+            border-bottom: 2px solid black;
+            padding: 10px;
+        }
+
+        /* 只套用於表格中第一對 td */
+        /* 框線只有右邊有，樣式為2px寬 單直線 黑色 */
+        td:nth-child(1){
+            border-right: 2px solid black;
+        }
+
+        /* 只套用於表格中的奇數對 tr */
+        /* 背景色調成小麥色，字型顏色為黑色 */
+        tr:nth-child(odd){
+            background-color: wheat;
+            color:black
+        }
+
+        /* 只套用於表格中的偶數對 tr */
+        /* 背景色調成珊瑚色，字型顏色為黑色 */
+        tr:nth-child(even){
+            background-color: coral;
+            color:black
+        }
+
+        /* 設置class選擇器til，字型樣式設定為粗體字，有底線，大小24px */
+        .til{
+            font-weight: bold;
+            font-size: 24px;
+            text-decoration:underline
+        }
+
+    </style>
+</head>
+
+<body>
+    <h3 class = til>我的模組列表</h3>
+    <table>
+        <tr>
+            <td>常用</td>
+            <td>JEI</td>
+            <td>Journey Map</td>
+            <td>Hwyla</td>
+        </tr>
+
+        <tr>
+            <td>裝備</td>
+            <td>Enigmatic Legacy</td>
+            <td>Useful backpacks</td>
+            <td>Gobber2</td>
+        </tr>
+
+        <tr>
+            <td>魔法與生物</td>
+            <td>Project E</td>
+            <td>Guard Villagers</td>
+            <td>Forbidden Arcanus</td>
+        </tr>
+
+        <tr>
+            <td>建築與儲存</td>
+            <td>Prefab</td>
+            <td>Metal Barrels</td>
+            <td>Iron Chest</td>
+        </tr>
+
+    </table>
+</body>
+</html>

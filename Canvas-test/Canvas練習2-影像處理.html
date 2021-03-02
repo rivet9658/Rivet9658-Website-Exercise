@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"></meta>
+    <title>Rivet的網站</title>
+    <script type="text/javascript">
+        var cvs, ctx; //全域變數
+        window.onload = function(){
+            cvs = document.getElementById("cvs");
+            ctx = cvs.getContext("2d");
+            // 載入影像
+            var img = new Image();
+            img.src = "Rivet.jpg"; // 抓取圖片位置
+            img.onload = function(){ // 註冊 load 事件，圖片載入完成後，才做繪製
+                // 這裡的this代表img
+                ctx.drawImage(this,0,0,cvs.width,cvs.height); // 將圖片直接畫在畫布上，參數分別為影像來源，x座標，y座標，寬度與高度
+                }
+        }
+
+        function invertColor(){ // 為了安全，只有伺服器才能抓取畫布
+            var pixels = ctx.getImageData(0,0, cvs.width, cvs.height); // ImageData 物件，取得影像細節內容
+            var data=pixels.data; // data是個陣列，存放所有像素資訊，一個像素佔據 4 個bytes(分別是三原色RGB與透明度，範圍0-255)
+            for(var i=0;i<data.length;i+=4){
+                data[i] = 255-data[i]; // 紅
+                data[i+1] = 255-data[i+1]; // 綠
+                data[i+2] = 255-data[i+2]; // 藍
+            }
+
+            ctx.putImageData(pixels,0,0); // 將圖片放回去，常寬不用輸入，跟抓進來的一樣
+        }
+    </script>
+
+</head>
+<body>
+    <div><button onclick="invertColor();">顏色反轉</button></div>
+    <canvas id = "cvs" width = "800" height = "600" style = "border:1px solid black;"></canvas>
+</body>
+</html>

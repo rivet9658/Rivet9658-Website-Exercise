@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Rivet的網站</title>
+<meta name="viewport" content="width=device-width ; initial-scale=1 ; maximum-scale=1 ; user-scalable=0"></meta>
+
+<!-- 從外部抓取css檔案 -->
+<!-- rel="stylesheet"的解釋，rel是Relations的縮寫指關聯到一個stylesheet（樣式表單) -->
+<!-- 所抓到的css會套用在所有裝置上 -->
+<link href="CSS3練習2-style.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+
+<body>
+
+    <!-- nav代表一個網頁中提供導航欄連結的區域 -->
+    <!-- 不管是當前網頁或者其他網頁，還是這個連結最終抵達的只是當前網頁的某個區塊 -->
+    <!-- 或者會抵達其他網頁，常見的導航欄範例有菜單、內容的表單，以及頁面本身 -->
+    <nav>
+        <div class="logo">標誌</div>
+        <div class="menu">選項</div>
+        <div class="user">使用者</div>
+    </nav>
+
+    <!-- main呈現了文檔的<body>或應用的主體部分 -->
+    <!-- 主體部分由與文檔直接相關 -->
+    <!-- 或者擴展於文檔的中心主題、應用的主要功能部分的內容組成 -->
+    <main>
+        <!-- RWD規劃：
+                1024px以上規劃4欄，固定尺寸(電腦)
+                1024-600px規劃2欄，彈性尺寸(平板)
+                600px以下規劃1欄，彈性尺寸(手機)
+        -->
+        <div class="item">生存日記<br/>打了木頭<br/>又挖了鐵礦</div>
+        <div class="item">製作物品<br/>造了一把鐵劍</div>
+        <div class="item">打怪數目<br/>打了一隻殭屍</div>
+        <div class="item">其餘項目<br/>之後睡了一覺</div>
+    </main>
+</body>
+</html>

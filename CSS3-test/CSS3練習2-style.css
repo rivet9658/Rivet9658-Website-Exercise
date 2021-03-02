@@ -1,0 +1,63 @@
+/* body樣式設定 */
+body{
+    font-family: "微軟正黑體";
+    margin:0px; background-color: wheat;
+}
+
+/* main樣式設定 */
+main{ /* 我是容器 */
+    display:flex; /* 顯示模式設定成flex */
+    flex-wrap: wrap;/* 超出範圍時是否換行的屬性，分為換行(wrap)、不換行、換行時
+反轉 */
+
+    /* justify-content 屬性定義了瀏覽器之間 */
+    /* 如何分配順著彈性容器主軸(或者網格行軸) 的元素之間及其周圍的空間 */
+    justify-content: center; /* 將分配模式設為置中(center) */
+    /* flex-start為靠左，flex-end為靠右 */
+
+    /* align-items相對於justify-content，是交錯軸的對齊設定 */
+    align-items: center; /* 將分配模式設為置中(center) */
+
+    /* justify-content與align-items專門搭配flex */
+
+    /* flex-start為靠左，flex-end為靠右，stretch為自動延展(預設值) */
+
+    background-color: gold;
+}
+
+main>.item{ /* 我是容器裡面的項目 */
+    flex:none; /* 設定flex屬性，none代表項目不可彈性縮放 */
+    width:250px; margin:10px; /* 設定項目寬度250px，外距10px */
+    background-color: greenyellow;
+}
+
+@media (max-width:1024px){ /* 最大尺寸1024px或以下時套用 */
+    main>.item{
+        width:45%;
+    }
+}
+
+@media (max-width:600px){ /* 最大尺寸600px或以下時套用 */
+    main>.item{
+        width:90%;
+    }
+}
+
+nav{
+    display: flex;
+}
+
+nav>.logo{
+    flex:none; width:100px; /* flex:none，沒有彈性，不可縮放 */
+    background-color: lightsalmon;
+}
+
+nav>.menu{
+    flex:auto; /* flex:auto，盡可能把容器的空間張滿 */
+    background-color: tomato;
+}
+
+nav>.user{
+    flex:none; width:100px; /* flex:none，沒有彈性，不可縮放 */
+    background-color: pink;
+}

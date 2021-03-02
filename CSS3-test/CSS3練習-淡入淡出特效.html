@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "utf-8"></meta>
+    <title>Rivet的網站</title>
+
+    <script type = "text/javascript">
+        window.onload = function(){
+            var box =document.getElementById("box");
+            box.addEventListener("mouseover" , function(){ //建立事件處理器mouseover，滑鼠移入後執行以下程式
+                this.style.opacity = 1; //漸漸淡入
+                this.style.backgroundColor = "black"; //漸漸變黑色
+            })
+
+            box.addEventListener("mouseout" , function(){ //建立事件處理器mouseout，滑鼠移出後執行以下程式
+                this.style.opacity = 0.5; //漸漸淡出
+                this.style.backgroundColor = "chocolate"; //漸漸變巧克力色
+            })
+        }
+    </script>
+
+    <style type = "text/css">
+        .box{
+            width: 100px;height: 100px;background-color: chocolate;opacity: 0.5;
+            /* 用transition監控opacity屬性，當用js對opacity進行設定時，進行漸變
+            box.addEventListener("mouseout" , function(){ //建立事件處理器mouseout，滑鼠移出後執行以下程式
+                this.style.opacity = 0.5; //漸漸淡出
+                this.style.backgroundColor = "chocolate"; //漸漸變巧克力色
+            })
+        }
+    </script>
+
+    <style type = "text/css">
+        .box{
+            width: 100px;height: 100px;background-color: chocolate;opacity: 0.5;
+            /* 用transition監控opacity屬性，當用js對opacity進行設定時，進行漸變處理 */
+            /* 可同時監控多個style，這裡再監控背景顏色 */
+            transition: opacity 1s, background-color 1s;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="box"></div>
+</body>
+</html>

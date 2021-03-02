@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"></meta>
+    <title>Rivet的網站</title>
+    <script type="text/javascript">
+
+        function touchmenu(number){
+            var catalog = document.getElementById("catalog-"+number);
+            //classList -> 控制對應id標籤物件的class，toggle-> 將class切換成括號所設定的
+            catalog.classList.toggle("hide");
+
+
+            /*
+            if(catalog.style.display == "none"){ //如果是隱藏狀態，則顯示出來
+                catalog.style.display = "block";
+            }else{
+                catalog.style.display = "none"; //如果是顯示狀態，則隱藏起來
+            }
+            */
+        }
+
+    </script>
+
+    <style type="text/css">
+        .hide{display:none;}
+    </style>
+</head>
+
+<body>
+    <div onclick="touchmenu(1);">選單1</div>
+    <ul id="catalog-1">
+        <li>關於我</li>
+        <li>作品集</li>
+        <li>聯繫我</li>
+    </ul>
+
+    <div onclick="touchmenu(2);">選單2</div>
+    <ul id="catalog-2">
+        <li>關於我</li>
+        <li>作品集</li>
+        <li>聯繫我</li>
+    </ul>
+
+    <div onclick="touchmenu(3);">選單3</div>
+    <ul id="catalog-3">
+        <li>關於我</li>
+        <li>作品集</li>
+        <li>聯繫我</li>
+    </ul>
+</body>
+</html>

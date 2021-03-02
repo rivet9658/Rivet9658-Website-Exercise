@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"></meta>
+    <title>Rivet的網站</title>
+    <script type = "text/javascript">
+        var video;
+        window.onload = function(){
+            video = document.getElementById("video");
+            //在video裡加入新的事件處理器updateTimer
+            video.addEventListener("timeupdate", updateTimer);
+            //註冊ended事件，可在影片結束後進行操作
+            video.addEventListener("ended",function(){
+                alert("Ended");
+            })
+        }
+
+        function updateTimer(){ //會不斷更新資訊
+            var timer = document.getElementById("timer");
+            timer.innerHTML = video.currentTime + "/" + video.duration; // 當前撥放進度與總長度
+        }
+
+        function playvideo(){
+            video.play(); // 播放影片
+        }
+
+        function stopvideo(){
+            video.pause(); // 停止影片
+        }
+
+        function replayvideo(){ //重新撥放
+            video.currentTime=0; //設定影片撥放進度
+            video.play //重新開始撥放
+        }
+    </script>
+</head>
+<body>
+    <!-- 影片檔名，是否有控制介面，是否自動撥放 -->
+        <!-- <video src="Cytus Chapter K - The Fallen Bloom.mp4" controls autoplay></video> -->
+
+    <!-- 自訂控制介面 -->
+    <video id = "video" src = "Mili - YUBIKIRI-GENMAN -special edit-.mp4"></video>
+    <div>
+        <button onclick = "playvideo();">Play</button>
+        <button onclick = "stopvideo();">Stop</button>
+        <button onclick = "replayvideo();">Replay</button>
+        <span id = "timer"></span>
+    </div>
+</body>
+</html>

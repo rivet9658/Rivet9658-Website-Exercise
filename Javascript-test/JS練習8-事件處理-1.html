@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"></meta>
+    <title>Rivet的網站</title>
+    <script type="text/javascript">
+        function over(element){
+            element.style.color="red";
+        }
+
+        function out(element){
+            element.style.color="black";
+        }
+    </script>
+
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body>
+    <button onclick="alert('8787');">click</button>
+    <span onmouseover="over(this);"
+    onmouseout="out(this);">8787</span>
+    <!-- onclick點擊，onmouseover滑鼠移上去，onmouseout滑鼠移走 -->
+    <!-- 以上為事件處理，裡面可直接用this，this代表所在的標籤 -->
+</body>
+</html>

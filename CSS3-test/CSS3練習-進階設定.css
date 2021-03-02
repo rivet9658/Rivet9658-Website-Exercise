@@ -1,0 +1,10 @@
+.box{
+    width:100px;height:100px;background-color: burlywood;
+    opacity: 0.5; /* 設定透明度，0代表全透明，1代表不透明 */
+    border-radius: 20px; /*設定緣角，單位px或百分比，越大越圓(50%剛好是個圓型)*/
+    box-shadow:5px 0px 5px #000000; /* 陰影設定，簡而言之就是在背後多加個複製品的概念 */
+    /* 分別代表陰影的x方向位移(往右),y方向位移(往下),
+       陰影擴散(旁邊看起來糊糊的，0為沒有，越大越糊)與顏色 */
+    text-shadow:0px 0px 5px #ffffff;
+    /* 文字陰影，概念跟box的一樣 */
+}

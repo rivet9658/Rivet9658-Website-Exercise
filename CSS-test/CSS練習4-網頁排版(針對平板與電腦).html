@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"></meta>
+    <title>Rivet的網站</title>
+    <style type="text/css">
+
+        /* 設置標籤名稱選擇器body，字型改成微軟正黑體，外距調成0px(貼齊整個網頁)*/
+        /* 背景顏色設為小麥色 */
+        body{
+            margin: 0px; font-family: "微軟正黑體";
+            background-color: wheat;
+        }
+
+        /* 設置class選擇器head，背景顏色為木頭色，字型顏色為黑色*/
+        /* 字型設為粗體，大小30px */
+        /* 內距為10px，將文字置中 */
+        .head{
+            background-color:burlywood; color:black;
+            font-weight: bold; font-size: 30px;
+            padding: 10px; text-align: center;
+        }
+
+        /* 設置class選擇器content，box寬度設成1000px，左外距與右外距自動調整(置中) */
+        .content{
+            width:1000px; margin-left: auto; margin-right: auto;
+        }
+
+        /* 設置class選擇器box，box寬度設成300px，內距設為10px，外距設為10px，顏色設為雪白色*/
+        /* 顯示模式設為inline-block，垂直對齊設為對齊上方 */
+        /* 區塊內文字內容置中，區塊高度設為300px，行高(這裡也是行距的樣子)設為30px */
+        .box{
+            width:280px; padding:10px; margin: 10px; background-color:snow;
+            display:inline-block; vertical-align: top;
+            text-align:center; height:300px; line-height:40px;
+        }
+
+        /* 設置class選擇器boxtitle，字型設置成粗體，大小 為24px */
+        .boxtitle{
+            font-weight: bold;font-size:24px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="head">Rivet的自我介紹</div>
+    <div class="content">
+
+        <div class="box">
+            <div class="boxtitle">基本資料</div>
+            <div>性別：男</div>
+            <div>血型：A型</div>
+            <div>生肖：兔</div>
+        </div>
+
+        <div class="box">
+            <div class="boxtitle">我的興趣</div>
+            <div>聽音樂</div>
+            <div>騎腳踏車</div>
+            <div>打遊戲</div>
+        </div>
+
+        <div class="box">
+            <div class="boxtitle">我的技能</div>
+            <div>Python(pandas等)</div>
+            <div>HTML、CSS、JS</div>
+            <div>統計學(statistical，會迴歸分析等)</div>
+        </div>
+    </div>
+</body>
+</html>

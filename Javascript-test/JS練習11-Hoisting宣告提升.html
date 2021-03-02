@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"></meta>
+    <title>Rivet的網站</title>
+    <script type="text/javascript">
+        //在js裡面變數都會做宣告提升(Hoisting)，所以就算寫在後面也會先宣告
+        /*
+        x = 10; //給定資料
+        alert(x); //顯示出來
+        var x; //宣告變數
+        */
+
+        //注意，js只是做變數提升，並不是提升給定資料
+        /*
+        alert(x); //會顯示undefined
+        var x = 10; //不提升給定資料(=10)，只會提升var x
+        */
+
+        //函式也會宣告提升
+        /*
+        display(); //呼叫函式
+        function display(){ //宣告函式，會做宣告提升
+            alert("hellow");
+        }
+        */
+
+        //優先做變數display的變數提升，所以函式沒有被定義
+        display(); //display不是一函式
+        var display = function(){ //display會被當作變數先提升
+            alert("hellow");
+        }
+
+        //上面的詳細大約是這樣
+        /*
+        var dispaly;
+        display();
+        display = function(){
+            alert("hellow");
+        }
+        */
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

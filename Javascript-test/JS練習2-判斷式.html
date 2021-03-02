@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rivet的網站</title>
+    <script type="text/javascript">
+
+        var n1=prompt("請輸入一個數字",0);
+        n1 = Number(n1); //字串變數字
+        while(true){
+            if(isNaN(n1)){//判斷是否為數字，不是傳回true
+                alert("輸入的值不是數字，請重新輸入!");
+                var n1=prompt("請輸入一個數字",0);
+                n1 = Number(n1);
+            }else{
+                break;
+            }
+        }
+
+        var n2=prompt("再輸入一個數字",0);
+        n2 = Number(n2);
+        while(true){
+            if(isNaN(n2)){//判斷是否為數字，不是傳回true
+                alert("輸入的值不是數字，請重新輸入!");
+                var n2=prompt("再輸入一個數字",0);
+                n2 = Number(n2);
+            }else{
+                break;
+            }
+        }
+
+        var result;
+
+        var op=prompt("輸入+,-,*,/","");
+        //判斷是否是運算子
+        while(true){
+            if (op != "+"){
+                if(op !="-"){
+                    if(op !="*"){
+                        if(op !="/"){
+                            alert("不是輸入運算子，請重新輸入");
+                            op=prompt("輸入+,-,*,/","");
+                        }else{
+                            break;
+                        }
+                    }else{
+                        break;
+                    }
+                }else{
+                    break;
+                }
+            }else{
+                break;
+                }
+        }
+
+        if (op=="+"){
+            result=n1+n2;
+        }else if(op=="-"){
+            result=n1-n2;
+        }else if(op=="*"){
+            result=n1*n2;
+        }else{
+            result=n1/n2;
+        }
+
+        alert(result)
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"></meta>
+    <title>Rivet的網站</title>
+    <script type="text/javascript">
+        window.onload=function(){ // 進入或重整網頁時立刻載入
+            var cvs = document.getElementById("cvs");
+            var ctx = cvs.getContext("2d"); //利用canvas相對應的getContext物件來進行繪圖，2d為2d繪圖，webgl為3d繪圖
+
+            // Fill 填滿
+            ctx.fillStyle="green"; // 填滿區塊的顏色調整
+            ctx.globalAlpha=0.5; // 填滿區塊的透明度調整，數字0-1(透明-不透明)
+            ctx.fillRect(50,50,100,100); // 製造一個填滿區塊，數值分別為x的座標，y的座標，圖案的寬，圖案的長
+            // Stroke 描邊
+            ctx.globalAlpha=1; //會影響全部圖案，所以要額外調整
+            ctx.strokeStyle="blue"; // 描邊區塊的顏色調整
+            ctx.strokeRect(200,200,50,50); // 製造一個描邊區塊，數值分別為x的座標，y的座標，圖案的寬，圖案的長
+            // Path 路徑
+            ctx.beginPath(); // 建立路徑
+            ctx.moveTo(200,100); // 移動到輸入位置，從這開始畫，輸入座標
+            ctx.lineTo(300,300); // 拉線到輸入位置，輸入座標
+            ctx.closePath(); // 關閉路徑
+            ctx.stroke(); // 對路徑描邊，也可用填滿，樣式套用上面的
+            //利用路徑畫出多邊形
+            ctx.beginPath();
+            ctx.moveTo(300,300);
+            ctx.lineTo(400,350);
+            ctx.lineTo(250,400);
+            ctx.closePath();
+            ctx.fill(); // 對路徑填滿
+        }
+
+    </script>
+</head>
+<body>
+    <!-- 網頁上的畫布 -->
+    <canvas id="cvs" width="800" height="600" style="border: 1px solid black;">
+
+    </canvas>
+</body>
+</html>

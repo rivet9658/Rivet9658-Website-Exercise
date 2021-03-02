@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"></meta>
+    <title>Rivet的網站</title>
+    <script type="text/javascript">
+        /* RPG玩家物件 */
+        var RPGplayer = new Object();
+        RPGplayer.name = "Rivet";
+        RPGplayer.hp = 100;
+        RPGplayer.mp = 100;
+        RPGplayer.rest = function(){
+            this.hp+=3;
+            this.mp+=1;
+        }
+
+        RPGplayer.fight = function(){
+            this.hp-=5;
+            this.mp-=2;
+        }
+            this.status=function(){
+                alert("Player's Name is: "+this.name+"，Player's HP is: "+this.hp+"，Player's MP is: "+this.mp);
+            }
+
+        var playerRivet = new Player("Rivet",100,200); //呼叫建構式要加new
+        playerRivet.fight();
+        playerRivet.fight();
+        playerRivet.rest();
+        playerRivet.status();
+
+        var playerNRL = new Player("NRL",150,150);
+        playerNRL.fight();
+        playerNRL.status();
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

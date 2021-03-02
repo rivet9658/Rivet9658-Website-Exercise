@@ -1,0 +1,28 @@
+.box{
+    width: 100px;height: 100px;background-color: antiquewhite;
+    /* transform:translate(100px,50px); */ /* 線性轉換-位移，第一個為x軸的位移(
+    往右)，第二個為y軸的位移(往下)，單位是px */
+    /* transform:scale(1.5,0.5); */ /*線性轉換-縮放，第一個為x軸的縮放，第二個為y軸的縮放，單位是倍數*/
+    /* transform:rotate(45deg); */ /* 線性轉換-旋轉，順時針旋轉，單位是角度 */
+    /* transform:skew(45deg,-10deg); */ /* 線性轉換-歪斜，第一個為x軸的歪斜，第
+    二個為y軸的歪斜，單位是角度 */
+    /* transform:translate(100px,50px) rotate(45deg); */ /* 可連續組合 */
+}
+
+.cube>.top{
+    width: 240px;height: 60px;background-color: #dddddd;
+    transform:translate(30px,0px) skew(-45deg,0deg); /* 進行形成立方體的位移與歪斜 */
+}
+
+.cube>.center{
+    width: 240px;height: 240px;background-color: #aaaaaa;
+    display:inline-block; /* 防止與right斷行 */
+
+}
+
+.cube>.right{
+    width: 60px;height: 240px;background-color: #888888;
+    transform:translate(0px,-30px) skew(0deg,-45deg); /* 進行形成立方體的位移與
+    歪斜 */
+    display:inline-block; /* 防止與center斷行 */
+}

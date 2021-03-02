@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8"></meta>
+        <title>Rivet的網站</title>
+        <style type="text/css">
+
+        /* 標籤名稱選擇器，改整個標籤(如body,h3等)，前面不需要. */
+        body{
+                font-size:16px;
+                font-family:"微軟正黑體"
+        }
+        h3{
+                font-size:25px;
+                text-decoration:underline
+        }
+
+        /* class 選擇器 .加content(任意值)，可在前面加標籤，當是指定標籤且是指定的class才套用 */
+        div.content{
+                padding:10px; /* 邊距(內縮) */
+                border:5px dashed green; /* 邊框 */
+        margin-top:10px;margin-bottom:10px /* 邊界(外擴) */
+        }
+
+        /* ID 選擇器，前面加#，用id名稱找到對應的區塊(如一個按鈕等)，通常給JS用 */
+        #btn{
+                border:1px solid black;
+                background-color:white;padding:5px
+        }
+
+        /* 虛擬選擇器，搭配其他選擇器使用 */
+        /* :hover 虛擬選擇器，滑鼠移到目標上時，套用一組設定 */
+        #btn:hover{
+                background-color:gray;
+        }
+
+        /* :focus 虛擬選擇器，當目標(對象/標籤)取得焦點時，套用一組設定 */
+        input:focus{
+                border:2px solid blue
+        }
+
+        /* 階層式選擇器，搭配其他選擇器使用，選擇器1(如a)要在選擇器2(如favorite)的內部才可以 */
+        /* favorite裡的超連結(a)改成綠色 */
+        .favorite a{
+                color:green
+        }
+
+        /* favorite裡的超連結(a)改成藍色 */
+        .en a{
+                color:blue
+        }
+        </style>
+
+</head>
+
+<body>
+        <h3>自我介紹</h3>
+        <div class="content">
+                哈囉，我是Rivet!
+        </div>
+
+        <h3>收尋引擎連結</h3>
+        <ul class="en">
+                <li><a href="https://www.google.com.tw/">Google</a></li>
+        </ul>
+
+        <h3>我的最愛</h3>
+        <ul class="favorite">
+                <li><a href="https://www.curseforge.com/">CurseForge</a></li>
+                <li><a href="https://www.gamer.com.tw/">巴哈姆特</a></li>
+        </ul>
+
+        <div class="content">
+                有話要說 <input type="text" /> <button id=btn>送出</button>
+        </div>
+
+</body>
+</html>

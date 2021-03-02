@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"></meta>
+    <title>Rivet的網站</title>
+    <script type="text/javascript">
+        var cvs, ctx; //全域變數
+        window.onload = function(){
+            cvs = document.getElementById("cvs");
+            ctx = cvs.getContext("2d");
+        }
+
+        function invertColor(){ // 改變色調，為了安全，只有伺服器才能抓取畫布
+            var pixels = ctx.getImageData(0,0, cvs.width, cvs.height); // ImageData 物件，取得影像細節內容
+            var data=pixels.data; // data是個陣列，存放所有像素資訊，一個像素佔據 4 個bytes(分別是三原色RGB與透明度，範圍0-255)
+            for(var i=0;i<data.length;i+=4){
+                data[i] = 255-data[i]; // 紅
+                data[i+1] = 255-data[i+1]; // 綠
+                data[i+2] = 255-data[i+2]; // 藍
+            }
+
+            ctx.putImageData(pixels,0,0); // 將圖片放回去，常寬不用輸入，跟抓進來的一樣
+        }
+
+        function loadfile(input){ // 輸入影像
+            var file = input.files[0]; // 使用者選取檔案的第一個檔案
+            var src = URL.createObjectURL(file); // URL為系統的一個物件，用底下的createObjectURL為目標創造出一個URL
+            var img = new Image(); // 建立新的Image
+            img.src = src // 設定檔案路徑
+            img.onload = function(){ // 讀完檔案後再畫出來
+                // 這裡的this代表img
+                ctx.drawImage(this,0,0,cvs.width,cvs.height); // 將圖片直接畫在畫布上，參數分別為影像來源，x座標，y座標，寬度與高度
+            }
+        }
+
+        function savefile(){ // 檔案儲存
+            var link = document.getElementById("download");
+            link.download = "image.jpg"; // 預設檔案名稱，瀏覽器點及超連結會觸發下載的動作
+            link.href = cvs.toDataURL("image/jpeg"); //設定超連結(cvs是整塊畫布，將其轉成URL)，輸出成jpeg
+            link.click(); //自己觸發點擊事件
+        }
+
+    </script>
+
+</head>
+<body>
+    <input type="file" onchange="loadfile(this);"></input> <!-- 建立輸入(輸入檔案)，註冊onchange事件，任何使用者選取了一個新的檔案就會觸發這個事件，this為input(檔案) -->
+    <button onclick="savefile();">影像儲存</button>
+    <a id="download"></a> <!-- 利用超連結來幫助下載檔案 -->
+    <div><button onclick="invertColor();">顏色反轉</button></div>
+    <canvas id = "cvs" width = "800" height = "600" style = "border:1px solid black;"></canvas>
+</body>
+</html>
